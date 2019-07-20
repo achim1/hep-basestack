@@ -660,5 +660,5 @@ def set_style_present():
           'ytick.minor.visible': False,
           'ytick.minor.width': 0.6,
           'ytick.right': False}
-       matplotlib.rcParams = present_style
+    matplotlib.rcParams = present_style
  
