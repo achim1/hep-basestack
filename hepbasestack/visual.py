@@ -7,7 +7,7 @@ import matplotlib
 
 from matplotlib import cycler
 
-set_style_default():
+def set_style_default():
     """
     A style suitable for notebooks and personal use.
     """
