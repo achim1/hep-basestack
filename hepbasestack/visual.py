@@ -2,7 +2,6 @@
 Set styles to a more simplistic and well readable setting.
 It might look less sophisticated, but the goal is to make it easy to read. Also provide some helper functions
 """
-
 import matplotlib
 
 from matplotlib import cycler
@@ -332,7 +331,9 @@ def set_style_default():
           'ytick.minor.visible': False,
           'ytick.minor.width': 0.6,
           'ytick.right': False}
-    matplotlib.rcParams = default_style
+
+    matplotlib.rcParams.update(default_style)
+    return default_style
 
 def set_style_present():
     """
@@ -660,5 +661,6 @@ def set_style_present():
           'ytick.minor.visible': False,
           'ytick.minor.width': 0.6,
           'ytick.right': False}
-    matplotlib.rcParams = present_style
- 
+
+    matplotlib.rcParams.update(present_style)
+    return present_style
