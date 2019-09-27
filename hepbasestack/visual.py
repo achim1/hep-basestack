@@ -5,6 +5,7 @@ It might look less sophisticated, but the goal is to make it easy to read. Also 
 import matplotlib
 
 from matplotlib import cycler
+from . logger import Logger
 
 def set_style_default():
     """
@@ -106,7 +107,7 @@ def set_style_default():
           'date.autoformatter.year': '%Y',
           'docstring.hardcopy': False,
           'errorbar.capsize': 0.0,
-          'examples.directory': '',
+          #'examples.directory': '',
           'figure.autolayout': False,
           'figure.constrained_layout.h_pad': 0.04167,
           'figure.constrained_layout.hspace': 0.02,
@@ -266,7 +267,7 @@ def set_style_default():
           'savefig.edgecolor': 'w',
           'savefig.facecolor': 'w',
           'savefig.format': 'png',
-          'savefig.frameon': True,
+          #'savefig.frameon': True,
           'savefig.jpeg_quality': 95,
           'savefig.orientation': 'portrait',
           'savefig.pad_inches': 0.1,
@@ -282,13 +283,13 @@ def set_style_default():
           'text.hinting_factor': 8,
           'text.latex.preamble': '',
           'text.latex.preview': False,
-          'text.latex.unicode': True,
+          #'text.latex.unicode': True,
           'text.usetex': True,
           'timezone': 'UTC',
           'tk.window_focus': False,
           'toolbar': 'toolbar2',
-          'verbose.fileo': 'sys.stdout',
-          'verbose.level': 'silent',
+          #'verbose.fileo': 'sys.stdout',
+          #'verbose.level': 'silent',
           'webagg.address': '127.0.0.1',
           'webagg.open_in_browser': True,
           'webagg.port': 8988,
@@ -333,7 +334,8 @@ def set_style_default():
           'ytick.right': False}
 
     matplotlib.rcParams.update(default_style)
-    return default_style
+    Logger.info("Set matplotlib hepbasestack-default style!")
+    #return default_style
 
 def set_style_present():
     """
@@ -436,7 +438,7 @@ def set_style_present():
           'date.autoformatter.year': '%Y',
           'docstring.hardcopy': False,
           'errorbar.capsize': 0.0,
-          'examples.directory': '',
+          #'examples.directory': '',
           'figure.autolayout': False,
           'figure.constrained_layout.h_pad': 0.04167,
           'figure.constrained_layout.hspace': 0.02,
@@ -596,7 +598,7 @@ def set_style_present():
           'savefig.edgecolor': 'w',
           'savefig.facecolor': 'w',
           'savefig.format': 'png',
-          'savefig.frameon': True,
+          #'savefig.frameon': True,
           'savefig.jpeg_quality': 95,
           'savefig.orientation': 'portrait',
           'savefig.pad_inches': 0.1,
@@ -612,13 +614,13 @@ def set_style_present():
           'text.hinting_factor': 8,
           'text.latex.preamble': '',
           'text.latex.preview': False,
-          'text.latex.unicode': True,
+          #'text.latex.unicode': True,
           'text.usetex': True,
           'timezone': 'UTC',
           'tk.window_focus': False,
           'toolbar': 'toolbar2',
-          'verbose.fileo': 'sys.stdout',
-          'verbose.level': 'silent',
+          #'verbose.fileo': 'sys.stdout',
+          #'verbose.level': 'silent',
           'webagg.address': '127.0.0.1',
           'webagg.open_in_browser': True,
           'webagg.port': 8988,
@@ -663,4 +665,6 @@ def set_style_present():
           'ytick.right': False}
 
     matplotlib.rcParams.update(present_style)
-    return present_style
+    Logger.info("Set matplotlib hepbasestack-present style!")
+
+    #return present_style
