@@ -10,6 +10,8 @@ __all__ = ["visual","itools","logger"]
 import resource
 
 from . import logger
+from . import visual
+
 Logger = logger.Logger
 
 from . import itools
