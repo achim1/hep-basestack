@@ -46,7 +46,7 @@ def timed_progressbar(runtime):
     """
     ex = fut.ProcessPoolExecutor(max_workers=1)
     ex.submit(_progbar, runtime)
-    return
+    return ex
 
 ########################################################
 
