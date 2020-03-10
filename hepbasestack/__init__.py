@@ -8,7 +8,7 @@ __version__ = '0.0.1'
 __all__ = ["visual","itools","logger"]
 
 import resource
-import concurrent.futures as fu
+import concurrent.futures as fut
 import tqdm
 
 from . import logger
