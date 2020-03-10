@@ -10,6 +10,7 @@ __all__ = ["visual","itools","logger"]
 import resource
 import concurrent.futures as fut
 import tqdm
+import time
 
 from . import logger
 from . import visual
