@@ -8,6 +8,8 @@ __version__ = '0.0.1'
 __all__ = ["visual","itools","logger"]
 
 import resource
+import concurrent.futures as fu
+import tqdm
 
 from . import logger
 from . import visual
@@ -15,6 +17,35 @@ from . import visual
 Logger = logger.Logger
 
 from . import itools
+
+########################################################
+
+def _progbar(runtime):
+    """
+    Helper function showing a timed progress bar
+
+    Args:
+        runtime (int) : max time of the progressbar in seconds
+    """
+
+    for k in tqdm.tqdm(range(int(runtime))):
+        time.sleep(1)
+
+########################################################
+
+def timed_progressbar(runtime):
+    """
+    Show a progress bar increasing every second for runtime seconds.
+    This runs in its own thread, so the program can continue in the 
+    meantime. This can be useful for while loops which run for a certain 
+    time for example.
+
+    Args:
+        runtime (int) : maxtime of the progress bar in seconds
+    """
+    ex = fut.ProcessPoolExecutor(max_workers=1)
+    ex.submit(progbar, runtime)
+    return
 
 ########################################################
 
