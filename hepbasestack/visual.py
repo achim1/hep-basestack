@@ -365,7 +365,19 @@ def set_style_default():
           'ytick.minor.size': 5.0,
           'ytick.minor.visible': False,
           'ytick.minor.width': 0.6,
-          'ytick.right': False}
+          'ytick.right': False,
+
+          # this is stolen from https://stackoverflow.com/questions/2537868/sans-serif-math-with-latex-in-matplotlib
+          # to make sans serif font work
+          #'text.latex.preamble' : [\
+          #       r'\usepackage{siunitx}',   # i need upright \micro symbols, but you need...
+          #       r'\sisetup{detect-all}',   # ...this to force siunitx to actually use your fonts
+          #       r'\usepackage{helvet}',    # set the normal font here
+          #       r'\usepackage{sansmath}',  # load up the sansmath so that math -> helvet
+          #       r'\sansmath'               # <- tricky! -- gotta actually tell tex to use!
+          #]\
+        }  
+
 
     matplotlib.rcParams.update(default_style)
     Logger.info("Set matplotlib hepbasestack-default style!")
@@ -698,7 +710,17 @@ def set_style_present():
           'ytick.minor.size': 5.0,
           'ytick.minor.visible': False,
           'ytick.minor.width': 0.6,
-          'ytick.right': False}
+          'ytick.right': False,
+          # this is stolen from https://stackoverflow.com/questions/2537868/sans-serif-math-with-latex-in-matplotlib
+          # to make sans serif font work
+          #'text.latex.preamble' : [\
+          #       r'\usepackage{siunitx}',   # i need upright \micro symbols, but you need...
+          #       r'\sisetup{detect-all}',   # ...this to force siunitx to actually use your fonts
+          #       r'\usepackage{helvet}',    # set the normal font here
+          #       r'\usepackage{sansmath}',  # load up the sansmath so that math -> helvet
+          #       r'\sansmath'               # <- tricky! -- gotta actually tell tex to use!
+          #]\
+        }  
 
     matplotlib.rcParams.update(present_style)
     Logger.info("Set matplotlib hepbasestack-present style!")

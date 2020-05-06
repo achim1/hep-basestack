@@ -8,8 +8,8 @@ import inspect
 import os
 import sys
 
-#LOGFORMAT = '%(levelname)s:%(message)s:%(module)s:%(funcName)s:%(lineno)d'
-LOGFORMAT = '%(levelname)s:%(message)s'
+LOGFORMAT = '%(levelname)s:%(message)s:%(module)s:%(funcName)s:%(lineno)d'
+#LOGFORMAT = '%(levelname)s:%(message)s'
 LOGLEVEL  = 30
 alertstring = lambda x :  "\033[0;31m" + x + "\033[00m"
 
