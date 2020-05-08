@@ -34,8 +34,14 @@ def adjust_minor_ticks(axis, which="x"):
         if minor_tick_space < 0.1: 
             Logger.debug("Adjusting for small numbers in tick spacing, tickspace detectected {}".format(minor_tick_space))
             minor_tick_space = 0.1
-        getattr(axis, "{}axis".format(which)).set_minor_locator(matplotlib.ticker.MultipleLocator(minor_tick_space))
-        #axis.xaxis.set_minor_locator(matplotlib.ticker.MultipleLocator(minor_tick_space))
+
+        thisaxis = getattr(axis, f"{which}axis")
+        #minloc = thisaxis.get_minor_locator()
+        if thisaxis.get_scale() == "linear":        
+            thisaxis.set_minor_locator(matplotlib.ticker.MultipleLocator(minor_tick_space))
+        else: # assume log
+            #thisaxis.set_minor_locator(matplotlib.ticker.LogLocator(subs=(0.1,)))
+            thisaxis.set_minor_formatter(matplotlib.ticker.LogFormatter(minor_thresholds=(1,3)))
     return axis 
 
 
