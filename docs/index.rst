@@ -1,59 +1,20 @@
-hepbasestack package
-====================
+.. hepbasestack documentation master file, created by
+   sphinx-quickstart on Mon May 25 16:14:55 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
 
-This package provides some simple snippets to ease daily work with the 
-python software stack (matplotlib/ipython notebook, etc.)
+Welcome to hepbasestack's documentation!
+========================================
 
-
-
-Submodules
-----------
-
-hepbasestack.colors module
---------------------------
-
-.. automodule:: hepbasestack.colors
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-hepbasestack.itools module
---------------------------
-
-.. automodule:: hepbasestack.itools
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-hepbasestack.layout module
---------------------------
-
-.. automodule:: hepbasestack.layout
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-hepbasestack.logger module
---------------------------
-
-.. automodule:: hepbasestack.logger
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-hepbasestack.visual module
---------------------------
-
-.. automodule:: hepbasestack.visual
-   :members:
-   :undoc-members:
-   :show-inheritance:
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
 
 
-Module contents
----------------
 
-.. automodule:: hepbasestack
-   :members:
-   :undoc-members:
-   :show-inheritance:
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
