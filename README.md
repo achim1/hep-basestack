@@ -9,4 +9,6 @@ determinining if something is executed within and ipython notebook etc.
 The hep in the name referes to high-energy particlephysiscs and the commonly used software stack numpy/matplotlib, which this
 packages should help to handle more comfortly with the provided snippets. However, it is not tied to the use in high-energy physics.
 
+### Installation
 
+`pip install hepbasestack`
