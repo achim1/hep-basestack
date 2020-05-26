@@ -2,6 +2,7 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/achim1/hepbasestack/badge.svg?branch=master)](https://coveralls.io/github/achim1/hepbasestack?branch=master)
 [![Documentation Status](https://readthedocs.org/projects/hepbasestack/badge/?version=latest)](https://hepbasestack.readthedocs.io/en/latest/?badge=latest)
+[![Build Status](https://travis-ci.org/achim1/hepbasestack.svg?branch=master)](https://travis-ci.org/achim1/hepbasestack)
 
 Collection of recurring snippets in common projects which includes logging, adjusting matploltib styles, setting plot layouts, 
 determinining if something is executed within and ipython notebook etc.
