@@ -1,6 +1,6 @@
 import pytest
 
-from hepbasestack import logger, itools, timeit, isnotebook
+from hepbasestack import logger, itools, timeit, isnotebook, colors, layout
 
 # helper functions generating test data
 # provide a list of input/output
@@ -33,14 +33,12 @@ def test_slicer(prepare_test_data_for_slicer):
         
     assert result == desired_result
 
-
 # test logger
 def test_logger(prepare_test_data_for_logger):
     import logging
 
     loglevel, __ = prepare_test_data_for_logger
     assert isinstance(logger.get_logger(loglevel), logging.Logger)
-    
 
 def test_timit():
     @timeit 
@@ -53,9 +51,20 @@ def test_timit():
 def test_isnotebook():
     assert (isnotebook() == False)
 
-
 def test_flatten():
     data = [[1,3,4],[5,6,7],[8,9,10]]
     flattened = itools.flatten(data)
     assert flattened.ndim == 1
     assert len(flattened) == 9
+
+def test_colors():
+    cdict = colors.ColorDict()
+    # the sole feature of ColorDict is 
+    # to not raise a key error when a key 
+    # is not known but return it instead
+    assert cdict['idonotknowthiskey'] == 'idonotknowthiskey'
+
+    palette = colors.get_color_palette()
+    # there is a 'prohibited' color
+    assert palette['prohibited'] != 'prohibited'
+    assert len(palette.keys()) > 9

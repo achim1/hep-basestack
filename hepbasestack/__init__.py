@@ -4,7 +4,7 @@ Miscellaneous tools
 
 from __future__ import division
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 __all__ = ["visual","itools","logger"]
 
 import resource
@@ -101,8 +101,4 @@ def isnotebook():
             return False  # Other type (?)
     except NameError:
         return False      # Probably standard Python interpreter
-
-
-
-
 
