@@ -3,7 +3,6 @@ A logger with customizable loglevel at runtime. The loglevel can be set via the
 global `LOGLEVEL` variable. 
 """
 
-from future.utils import with_metaclass
 import logging
 import inspect
 import os
@@ -63,14 +62,14 @@ class AbstractCustomLoggerType(type):
 
         def wrapper(args):
 
-            #for i in 0,1,2,3:
-            #    frame = inspect.getouterframes(inspect.currentframe())[i]
-            #    filename = frame[1]
-            #    funcname = frame[2]
-            #    lineno = frame[3]
-            #    #print (i,filename, funcname, lineno)
-            #    test = "{},{},{},{}".format(i, filename, funcname, lineno)
-            #    print (test)
+            for i in 0,1,2,3:
+                frame = inspect.getouterframes(inspect.currentframe())[i]
+                filename = frame[1]
+                funcname = frame[2]
+                lineno = frame[3]
+                #print (i,filename, funcname, lineno)
+                test = "{},{},{},{}".format(i, filename, funcname, lineno)
+                print (test)
             #    del frame
             calframe = inspect.getouterframes(inspect.currentframe())[1]
             mname = os.path.split(calframe[1])[1].replace(".py","")
@@ -85,7 +84,7 @@ class AbstractCustomLoggerType(type):
         return wrapper
 
 
-class Logger(with_metaclass(AbstractCustomLoggerType,object)):
+class Logger(metaclass=AbstractCustomLoggerType):
     """
     A custom logger with loglevel changeable at runtime. To change the loglevel,
     set global LOGLEVEL variable in this namespace:
