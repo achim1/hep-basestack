@@ -62,23 +62,27 @@ class AbstractCustomLoggerType(type):
 
         def wrapper(args):
 
-            for i in 0,1,2,3:
-                frame = inspect.getouterframes(inspect.currentframe())[i]
-                filename = frame[1]
-                funcname = frame[2]
-                lineno = frame[3]
-                #print (i,filename, funcname, lineno)
-                test = "{},{},{},{}".format(i, filename, funcname, lineno)
-                print (test)
+            #for i in 0,1,2,3:
+            #    frame = inspect.getouterframes(inspect.currentframe())[i]
+            #    filename = frame[1]
+            #    funcname = frame[2]
+            #    lineno = frame[3]
+            #    #print (i,filename, funcname, lineno)
+            #    test = "{},{},{},{}".format(i, filename, funcname, lineno)
+            #    print (test)
             #    del frame
-            calframe = inspect.getouterframes(inspect.currentframe())[1]
-            mname = os.path.split(calframe[1])[1].replace(".py","")
-            lineno = calframe[2]
-            fname = calframe[3]
+            stack = 0
+            fname = "wrapper"
+            while fname == "wrapper":
+                calframe = inspect.getouterframes(inspect.currentframe())[1 + stack]
+                mname = os.path.split(calframe[1])[1].replace(".py","")
+                lineno = calframe[2]
+                fname = calframe[3]
+                stack+=1
             #if "module" in fname:
             #    fname = "module"
 
-            args += ":{}:{}:{}".format(mname, fname, lineno)
+            args += f":{mname}:{fname}:{lineno}"
             return getattr(logger, item)(args)
 
         return wrapper

@@ -1,10 +1,6 @@
 """
 Tools for managing iterables
 """
-from __future__ import division
-
-from builtins import range
-from past.utils import old_div
 
 import numpy as np
 import array as arr
@@ -32,7 +28,7 @@ def slicer(list_to_slice, slices):
 
     if slices == 0:
         slices = 1 # prevent ZeroDivisionError
-    maxslice = old_div(len(list_to_slice),slices)
+    maxslice = len(list_to_slice) // slices
     if (maxslice*slices) < len(list_to_slice) :
         maxslice += 1
     Logger.info("Sliced list in {} slices with a maximum slice index of {}" .format(slices,maxslice))
@@ -65,7 +61,7 @@ def flatten(iterable_of_iterables):
 
 def multiplex(iterable, iterable_of_iterables):
     """
-    More or less the inverst to flatten. Adjust the shape of iterable
+    More or less the inverse of flatten. Adjust the shape of iterable
     to match that of iterable_of_iterables by stretching each value to 
     be an iterable with the length of the respective element
     in iterable_of_iterables, but with always the same value

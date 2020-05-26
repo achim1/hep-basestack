@@ -1,7 +1,6 @@
 import pytest
-
+import numpy as np
 from hepbasestack import logger, itools, timeit, timed_progressbar, isnotebook, colors, layout, visual
-
 # helper functions generating test data
 # provide a list of input/output
 
@@ -32,6 +31,23 @@ def test_slicer(prepare_test_data_for_slicer):
         result = tuple(result)
         
     assert result == desired_result
+
+def test_multiplex():
+    
+    iterable = [1,2,3,4,5]
+    iterable_of_iterables = [np.ones(3),np.ones(4),np.ones(5),np.ones(6),np.ones(7)]
+    plexed = itools.multiplex(iterable, iterable_of_iterables)
+    assert len(plexed[0]) == 3
+    assert len(plexed[1]) == 4
+    assert len(plexed[2]) == 5
+    assert len(plexed[3]) == 6
+    assert len(plexed[4]) == 7
+    assert plexed[0][0]  == 1
+    assert plexed[1][0]  == 2
+    assert plexed[2][0]  == 3
+    assert plexed[3][0]  == 4
+    assert plexed[4][0]  == 5
+
 
 # test logger
 def test_logger(prepare_test_data_for_logger):
