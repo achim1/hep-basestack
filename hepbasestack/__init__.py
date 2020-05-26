@@ -2,7 +2,7 @@
 Miscellaneous tools
 """
 
-__version__ = '0.0.2'
+__version__ = '0.1.0'
 __all__ = ["visual","itools","logger", "colors", "layout"]
 
 import resource
