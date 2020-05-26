@@ -1,5 +1,6 @@
 """
-A logger with customizable loglevel at runtime.
+A logger with customizable loglevel at runtime. The loglevel can be set via the 
+global `LOGLEVEL` variable. 
 """
 
 from future.utils import with_metaclass

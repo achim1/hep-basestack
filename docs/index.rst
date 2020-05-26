@@ -12,15 +12,12 @@ hepbasestack
 Tools for resource management, etc.
 
 .. automodule:: hepbasestack
-    :members:
-    :undoc-members:
-    :show-inheritance:
+    :members: timed_progressbar, timeit, isnotebook
+
 
 
 hepbasestack.colors module
 --------------------------------
-
-A integration of the seaborn color palette
 
 .. automodule:: hepbasestack.colors
     :members:
@@ -30,8 +27,6 @@ A integration of the seaborn color palette
 hepbasestack.itools module
 ---------------------------------------
 
-Slicing of lists
-
 .. automodule:: hepbasestack.itools
     :members:
     :undoc-members:
@@ -40,9 +35,6 @@ Slicing of lists
 hepbasestack.logger module
 ---------------------------------------
 
-A convenient interface for python logging with the possibility
-to set a module wide loglevel at runtime
-
 .. automodule:: hepbasestack.logger
     :members:
     :undoc-members:
@@ -50,8 +42,6 @@ to set a module wide loglevel at runtime
 
 hepbasestack.visual module
 --------------------------------------
-
-Predefined style presets for matplotlib
 
 .. automodule:: hepbasestack.visual
     :members:
