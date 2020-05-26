@@ -2,10 +2,8 @@
 Miscellaneous tools
 """
 
-from __future__ import division
-
 __version__ = '0.0.2'
-__all__ = ["visual","itools","logger"]
+__all__ = ["visual","itools","logger", "colors", "layout"]
 
 import resource
 import concurrent.futures as fut
@@ -17,7 +15,6 @@ from . import visual
 
 Logger = logger.Logger
 
-from . import itools
 
 ########################################################
 

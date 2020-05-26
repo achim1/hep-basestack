@@ -1,6 +1,6 @@
 import pytest
 
-from hepbasestack import logger, itools, timeit, isnotebook, colors, layout
+from hepbasestack import logger, itools, timeit, timed_progressbar, isnotebook, colors, layout, visual
 
 # helper functions generating test data
 # provide a list of input/output
@@ -48,6 +48,9 @@ def test_timit():
 
     sleeper()
 
+def test_timedpbar():
+    timed_progressbar(2)
+
 def test_isnotebook():
     assert (isnotebook() == False)
 
@@ -68,3 +71,17 @@ def test_colors():
     # there is a 'prohibited' color
     assert palette['prohibited'] != 'prohibited'
     assert len(palette.keys()) > 9
+
+def test_visual():
+    import matplotlib
+    import pylab as p
+    visual.set_style_default()
+    visual.set_style_present()
+    assert matplotlib.rcParams['font.sans-serif'] == ['Open Sans']
+    fig = p.figure()
+    axis = fig.gca()
+    visual.adjust_minor_ticks(axis, which="x")
+    visual.adjust_minor_ticks(axis, which="y")
+    visual.adjust_minor_ticks(axis, which="both")
+
+ 
