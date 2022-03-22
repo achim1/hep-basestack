@@ -23,22 +23,35 @@ version = get_version('hepbasestack')
 
 # parse the requirements.txt file
 # FIXME: this might not be the best way
-install_requires = []
-with pathlib.Path('requirements.txt').open() as requirements_txt:
-    for line in requirements_txt.readlines():
-        if line.startswith('#'):
-            continue
-        try:
-            req = str([j for j in pk.parse_requirements(line)][0])
-        except Exception as e:
-            print (f'WARNING: {e} : Can not parse requirement {line}')
-            continue
-        install_requires.append(req)
+#install_requires = []
+#with pathlib.Path('requirements.txt').open() as requirements_txt:
+#    for line in requirements_txt.readlines():
+#        if line.startswith('#'):
+#            continue
+#        try:
+#            req = str([j for j in pk.parse_requirements(line)][0])
+#        except Exception as e:
+#            print (f'WARNING: {e} : Can not parse requirement {line}')
+#            continue
+#        install_requires.append(req)
 
-#with open(join(os.path.dirname(__file__), 'README.md')) as readme:
-with pathlib.Path('README.md').open() as readme:
-    long_description = readme.read()
+long_description='''
 
+A collection of (hopefully) useful tools:
+
+* logging facility
+
+* pre-set matplotlib styles
+
+* reasonable matplotlib figure sizes
+
+* a list slicer
+
+* ipython notebook detector
+
+...
+
+'''
 tests_require = [
     'pytest>=3.0.5',
     'pytest-cov',
@@ -58,11 +71,10 @@ setup(name='hepbasestack',
       author_email="achim.stoessl@gmail.com",
       url='https://github.com/achim1/hepbasestack',
       download_url=f"https://github.com/achim1/hepbasestack/archive/v{version}.tar.gz",
-      install_requires=install_requires,
+      #install_requires=install_requires,
       setup_requires=setup_requires,
       license="GPL",
-      platforms=["Ubuntu 16.04", "Ubuntu 16.10", "SL6.1",
-                 "Ubuntu 18.04", "Ubuntu 18.10", "Ubuntu 19.04"],
+      platforms=["Ubuntu 20.04", "Ubuntu 21.10"],
       classifiers=[
         "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
         "Development Status :: 5 - Production/Stable",
