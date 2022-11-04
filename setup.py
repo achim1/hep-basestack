@@ -6,7 +6,7 @@ from os.path import dirname as _dirname
 import re
 import sys
 import pathlib
-import pkg_resources as pk
+#import pkg_resources as pk
 # get_version and conditional adding of pytest-runner
 # are taken from 
 # https://github.com/mark-adams/pyjwt/blob/b8cc504ee09b4f6b2ba83a3db95206b305fe136c/setup.py

@@ -1,6 +1,6 @@
 """
 Color management. Colors are handled nicely in seaborn. For a quicker acces,
-we mix the seaborn color palette with the way colors handled in matplotlib.
+we mix the seaborn color palette with the way colors are handled in matplotlib.
 E.g. we can define our own color + the seaborn colors in the palette, but if 
 they are not found this will automatically fall back to matplotlib
 """

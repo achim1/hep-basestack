@@ -53,8 +53,6 @@ def set_style_default():
     """
     default_style = {'_internal.classic_mode': False,
           'agg.path.chunksize': 0,
-          #'animation.avconv_args': [],
-          #'animation.avconv_path': 'avconv',
           'animation.bitrate': -1,
           'animation.codec': 'h264',
           'animation.convert_args': [],
@@ -64,7 +62,6 @@ def set_style_default():
           'animation.ffmpeg_path': 'ffmpeg',
           'animation.frame_format': 'png',
           'animation.html': 'none',
-          #'animation.html_args': [],
           'animation.writer': 'ffmpeg',
           'axes.autolimit_mode': 'data',
           'axes.axisbelow': 'line',
@@ -105,14 +102,6 @@ def set_style_default():
           'boxplot.capprops.color': 'black',
           'boxplot.capprops.linestyle': '-',
           'boxplot.capprops.linewidth': 1.0,
-          #'boxplot.flierprops.color': 'black',
-          #'boxplot.flierprops.linestyle': 'none',
-          #'boxplot.flierprops.linewidth': 1.0,
-          #'boxplot.flierprops.marker': 'o',
-          #'boxplot.flierprops.markeredgecolor': 'black',
-          #'boxplot.flierprops.markeredgewidth': 1.0,
-          #'boxplot.flierprops.markerfacecolor': 'none',
-          #'boxplot.flierprops.markersize': 6.0,
           'boxplot.meanline': False,
           'boxplot.meanprops.color': 'C2',
           'boxplot.meanprops.linestyle': '--',
@@ -137,7 +126,6 @@ def set_style_default():
           'boxplot.whiskers': 1.5,
           'contour.corner_mask': True,
           'contour.negative_linestyle': 'dashed',
-          #'datapath': '/usr/local/lib/python3.7/dist-packages/matplotlib/mpl-data',
           'date.autoformatter.day': '%Y-%m-%d',
           'date.autoformatter.hour': '%m-%d %H',
           'date.autoformatter.microsecond': '%M:%S.%f',
@@ -216,7 +204,6 @@ def set_style_default():
           'image.origin': 'upper',
           'image.resample': True,
           'interactive': False,
-          #'keymap.all_axes': ['a'],
           'keymap.back': ['left', 'c', 'backspace', 'MouseButton.BACK'],
           'keymap.copy': ['ctrl+c', 'cmd+c'],
           'keymap.forward': ['right', 'v', 'MouseButton.FORWARD'],
@@ -272,7 +259,6 @@ def set_style_default():
           'mathtext.bf': 'sans:bold',
           'mathtext.cal': 'cursive',
           'mathtext.default': 'it',
-          #'mathtext.fallback_to_cm': True,
           'mathtext.fontset': 'dejavusans',
           'mathtext.it': 'sans:italic',
           'mathtext.rm': 'sans',
@@ -307,12 +293,9 @@ def set_style_default():
           'savefig.edgecolor': 'w',
           'savefig.facecolor': 'w',
           'savefig.format': 'png',
-          #'savefig.frameon': True,
-          #'savefig.jpeg_quality': 95,
           'savefig.orientation': 'portrait',
           'savefig.pad_inches': 0.1,
           'savefig.transparent': False,
-          #'scatter.edgecolors': 'face',
           'scatter.marker': 'o',
           'svg.fonttype': 'path',
           'svg.hashsalt': None,
@@ -322,14 +305,10 @@ def set_style_default():
           'text.hinting': 'auto',
           'text.hinting_factor': 8,
           'text.latex.preamble': '',
-          #'text.latex.preview': False,
-          #'text.latex.unicode': True,
           'text.usetex': True,
           'timezone': 'UTC',
           'tk.window_focus': False,
           'toolbar': 'toolbar2',
-          #'verbose.fileo': 'sys.stdout',
-          #'verbose.level': 'silent',
           'webagg.address': '127.0.0.1',
           'webagg.open_in_browser': True,
           'webagg.port': 8988,
@@ -372,22 +351,8 @@ def set_style_default():
           'ytick.minor.visible': False,
           'ytick.minor.width': 0.6,
           'ytick.right': False,
-
-          # this is stolen from https://stackoverflow.com/questions/2537868/sans-serif-math-with-latex-in-matplotlib
-          # to make sans serif font work
-          #'text.latex.preamble' : [\
-          #       r'\usepackage{siunitx}',   # i need upright \micro symbols, but you need...
-          #       r'\sisetup{detect-all}',   # ...this to force siunitx to actually use your fonts
-          #       r'\usepackage{helvet}',    # set the normal font here
-          #       r'\usepackage{sansmath}',  # load up the sansmath so that math -> helvet
-          #       r'\sansmath'               # <- tricky! -- gotta actually tell tex to use!
-          #]\
-        }  
-
-
     matplotlib.rcParams.update(default_style)
     Logger.info("Set matplotlib hepbasestack-default style!")
-    #return default_style
 
 #######################################################################################################
 
@@ -617,7 +582,6 @@ def set_style_present():
           'mathtext.bf': 'sans:bold',
           'mathtext.cal': 'cursive',
           'mathtext.default': 'it',
-          #'mathtext.fallback_to_cm': True,
           'mathtext.fontset': 'dejavusans',
           'mathtext.it': 'sans:italic',
           'mathtext.rm': 'sans',
@@ -652,12 +616,9 @@ def set_style_present():
           'savefig.edgecolor': 'w',
           'savefig.facecolor': 'w',
           'savefig.format': 'png',
-          #'savefig.frameon': True,
-          #'savefig.jpeg_quality': 95,
           'savefig.orientation': 'portrait',
           'savefig.pad_inches': 0.1,
           'savefig.transparent': False,
-          #'scatter.edgecolors': 'face',
           'scatter.marker': 'o',
           'svg.fonttype': 'path',
           'svg.hashsalt': None,
@@ -667,14 +628,10 @@ def set_style_present():
           'text.hinting': 'auto',
           'text.hinting_factor': 8,
           'text.latex.preamble': '',
-          #'text.latex.preview': False,
-          #'text.latex.unicode': True,
           'text.usetex': True,
           'timezone': 'UTC',
           'tk.window_focus': False,
           'toolbar': 'toolbar2',
-          #'verbose.fileo': 'sys.stdout',
-          #'verbose.level': 'silent',
           'webagg.address': '127.0.0.1',
           'webagg.open_in_browser': True,
           'webagg.port': 8988,
@@ -731,4 +688,3 @@ def set_style_present():
     matplotlib.rcParams.update(present_style)
     Logger.info("Set matplotlib hepbasestack-present style!")
 
-    #return present_style
