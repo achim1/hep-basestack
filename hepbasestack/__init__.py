@@ -2,10 +2,12 @@
 Miscellaneous tools
 """
 
-__version__ = '0.1.6'
+__version__ = '0.1.7'
 __all__ = ["visual","itools","logger", "colors", "layout"]
 
-import resource
+import sys
+if sys.platform == 'linux':
+    import resource
 import concurrent.futures as fut
 import tqdm
 import time
@@ -73,8 +75,9 @@ def timeit(func):
         left_seconds = int(res_seconds)%60
         Logger.info('Execution of {0} took {1} hours, {2} mins and {3} seconds'.format(func.__name__, hours, mins, left_seconds))
         Logger.info('Execution of {0} took {1} seconds'.format(func.__name__,seconds))
-        max_mem = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
-        Logger.info('Execution might have needed {0} kB in memory (highly uncertain)!'.format(max_mem))
+        if sys.platform == 'linux':
+            max_mem = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+            Logger.info('Execution might have needed {0} kB in memory (highly uncertain)!'.format(max_mem))
         return res
 
     return wrapper
